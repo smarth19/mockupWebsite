@@ -1,0 +1,298 @@
+@import "../../index.css";
+
+.parentDiv {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+}
+.topDiv {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #008a45;
+  width: 100%;
+  background: #effff4;
+  border-radius: 8px 8px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.container {
+  padding: 0 30px;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.heading > div > span,
+.heading > div > strong {
+  font-size: 13px;
+  line-height: 17px;
+  text-align: right;
+  margin: 0 5px;
+}
+.heading > div > span {
+  color: #3d3d3d;
+  margin: 0 5px;
+}
+.heading > div > strong {
+  font-weight: 800;
+  color: #4c6ff5;
+  cursor: pointer;
+}
+.mainDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.mainDiv > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inputs {
+  width: 90%;
+  background: #f7f8fa;
+  border: 1px solid #d9d9db;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin: 11px 0;
+}
+.inputs > div:not(:last-child) {
+  border-bottom: 1px solid #d9d9db;
+}
+.inputs input {
+  outline: none;
+  border: 1px solid transparent;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 17px;
+  color: #8a8a8a;
+}
+.inputs input::placeholder {
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+.nameInputDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.nameInputDiv > input:first-child {
+  border-right: 1px solid #d9d9db;
+}
+.passwordInp {
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+}
+.btnAndSwitchComp_switchComp{
+  display: none;
+}
+.btn {
+  background: #2f6ce5;
+  border-radius: 20px;
+  color: #fff;
+  padding: 10px;
+  outline: none;
+  border: transparent;
+  width: 90%;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.socialBtns {
+  margin: 10px 0 0 0;
+}
+.socialBtns > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 0.6px solid #d9d9db;
+  box-sizing: border-box;
+  border-radius: 2px;
+  outline: none;
+  padding: 7px;
+  width: 90%;
+  margin: 8px 0;
+  cursor: pointer;
+}
+.socialBtns > button > img {
+  width: 17px;
+  margin: 0 5px;
+}
+.socialBtns > button > span {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+.secondDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.secondDiv > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.agreementInfo{
+  display: none;
+}
+.secondDiv > span {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: -0.008em;
+  color: #000000;
+  opacity: 0.6;
+  font-weight: 700;
+}
+.frgtPass {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 0 0;
+}
+.frgtPass > span {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.008em;
+  color: #000000;
+}
+.crossIcon {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .parentDiv {
+    display: flex;
+    justify-content: center;
+    border-radius: 16px 16px 0 0;
+  }
+  .topDiv {
+    display: none;
+  }
+  .container{
+    width: 100%;
+    padding: 15px 30px;
+  }
+  .secondDiv_switchComp {
+    display: none;
+  }
+  .heading {
+    margin: 5px 0 0 0;
+  }
+  .crossIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #000;
+    cursor: pointer;
+  }
+  .crossIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgba(0 0 0 / 0.5);
+  }
+  .crossIcon svg path {
+    fill: #fff;
+  }
+  .mainDiv {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .mainDiv > div {
+    align-items: center;
+  }
+
+  .inputs {
+    width: 100%;
+    background: #f7f8fa;
+    border: 1px solid #d9d9db;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin: 11px 0;
+  }
+  .btn {
+    width: 100%;
+  }
+  .socialBtns {
+    width: 100%;
+  }
+  .socialBtns > button {
+    margin: 8px auto;
+    width: 100%;
+  }
+  .mainDiv > div.secondDiv {
+    display: none;
+  }
+  .agreementInfo{
+    display: flex;
+    margin: 10px 0;
+    width: 65%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: -0.008em;
+    color: #000000;
+    opacity: 0.6;
+    font-weight: 700;
+  }
+  .btnAndSwitchComp{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .btnAndSwitchComp button{
+    width: auto;
+    padding: 10px 35px;
+  }
+  .btnAndSwitchComp_switchComp{
+    display: flex;
+    position: relative;
+    color: rgba(0 0 0 / 0.7);
+    font-weight: 900;
+    align-items: center;
+    cursor: pointer;
+  }
+  .btnAndSwitchComp_switchComp::before{
+    content: '';
+    position:absolute;
+    bottom: 9px;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0 0 0 / 0.5);
+    border-radius: 2px;
+  }
+  .signinInputs_parentDiv, .signinInputs_parentDiv + div{
+    width: 100%;
+  }
+}

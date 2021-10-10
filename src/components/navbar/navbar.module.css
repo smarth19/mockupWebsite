@@ -1,0 +1,104 @@
+@import "../../index.css";
+
+.navbar {
+  position: sticky;
+  width: 100%;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  z-index: 10001;
+}
+
+.navbar > div > div{
+  display: flex;
+  align-items: center;
+}
+.secondSection{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar_div1 {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 60px;
+}
+.navbar_div2 {
+  justify-content: center;
+}
+.navbar_div3 {
+  justify-content: end;
+  margin: 0 60px 0 0;
+}
+.navbar_div3 > span {
+  cursor: pointer;
+  font-weight: 900;
+}
+.navbar_div3 > strong {
+  color: rgb(73, 93, 198);
+  font-weight: 900;
+  margin: 0px 5px;
+}
+.searchDiv {
+  background: #f2f2f2;
+  border-radius: 21px;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  padding: 5px 12px;
+}
+.searchDiv > span {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.searchDiv > input {
+  outline: none;
+  border: 1px solid transparent;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  font-size: 17px;
+}
+.searchDiv > input::placeholder {
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #5c5c5c;
+}
+.userProfile{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar_div1 {
+    margin: 0 0 0 20px;
+  }
+  .navbar_div1 svg {
+    width: 120px;
+  }
+  .navbar_div3 {
+    justify-content: end;
+    margin: 0 20px 0 0;
+  }
+}
+@media screen and (max-width: 750px) {
+  /* .navbar{
+    position: static;
+  } */
+  .navbar > div > .navbar_div2{
+    display: none;
+  }
+  .navbar_div3 > *{
+    font-size: 15px;
+  }
+}
