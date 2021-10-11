@@ -7,7 +7,6 @@ import {initialState} from './reducers/App/state'
 import AppActions from './reducers/App/actions'
 import context from './reducers/App/context'
 import Registeration from './components/registeration/Registeration';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)

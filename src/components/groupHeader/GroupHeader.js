@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './groupHeader.module.css'
+import groupHeaderImg from './groupHeader.png'
 
 const GroupHeader = () => {
     return (
         <div className={styles.groupHeader}>
-            <img src={`https://source.unsplash.com/${window.screen.width}x440/?computer`} alt="computer engineering"/>
+            <img src={groupHeaderImg} alt="computer engineering"/>
             <div>
                 <div >
                     <div className={styles.heading}>Computer Engineering</div>

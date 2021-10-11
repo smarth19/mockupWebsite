@@ -2,13 +2,12 @@ import React from 'react'
 import ImgAndName from '../generic/ImgAndName/ImgAndName'
 import Icons from '../Icons'
 import styles from './groupContent.module.css'
-import Dropdown from 'react-bootstrap/Dropdown'
-import {CustomToggle, CustomMenu} from '../generic/DropdownMenu'
+import Dropdown from '../generic/dropdown/Dropdown'
 
 const ArticleCard = ({data}) => {
     return (
         <div className={styles.articleCard}>
-            <img src={`https://source.unsplash.com/1085x1085/?${data.type}`} alt="landscape"/>
+            {data.articleImg && <img src={data.articleImg} alt={data.topic}/>}
             <div className={styles.articleContent}>
                 <div className={styles.articleContent_top}>
                     <span>{data.type}</span>
@@ -16,13 +15,13 @@ const ArticleCard = ({data}) => {
                 <div className={styles.articleContent_title}>
                     <div>{data.topic}</div>
                     <Dropdown>
-                        <Dropdown.Toggle as={CustomToggle}>
+                        <Dropdown.Button>
                             <span className={`icon ${styles.three_horizontal_dots}`}><Icons icon="three_horizontal_dots"/></span>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu as={CustomMenu}>
-                            <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report</Dropdown.Item>
-                            <Dropdown.Item eventKey="1">Delete</Dropdown.Item>
+                        </Dropdown.Button>
+                        <Dropdown.Menu style={{left: "-65px"}}>
+                            <Dropdown.Item>Edit</Dropdown.Item>
+                            <Dropdown.Item>Report</Dropdown.Item>
+                            <Dropdown.Item>Delete</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>

@@ -1,0 +1,28 @@
+@import "../../../index.css";
+
+ul{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .3);
+    display: none;
+    position: absolute;
+    display: none;
+    z-index: 999;
+}
+li{
+    padding: 3px 26px;
+    transition: .2s;
+    list-style: none;
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 18px;
+}
+li:hover{
+    background-color: rgba(0, 0, 0, .1);
+}
+.showMenu{
+    display: block;
+}

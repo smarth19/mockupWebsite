@@ -3,8 +3,8 @@ import Icons from '../Icons'
 import styles from './navbar.module.css'
 import {useAppContext} from '../../reducers/App/context'
 import ImgAndName from '../generic/ImgAndName/ImgAndName'
-import Dropdown from 'react-bootstrap/Dropdown'
-import {CustomToggle, CustomMenu} from '../generic/DropdownMenu'
+import profilePic from './profilePic.png'
+import Dropdown from '../generic/dropdown/Dropdown'
 
 const Navbar = () => {
     const {appActions, appState} = useAppContext()
@@ -22,10 +22,10 @@ const Navbar = () => {
                 <div className={styles.navbar_div3}>
                     {appState.loggedIn ? 
                         <Dropdown>
-                            <Dropdown.Toggle as={CustomToggle}>
-                                <div className={styles.userProfile}><ImgAndName imgSrc='https://source.unsplash.com/48x48/?musk' name="Sarthak Kamra"/></div>
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu as={CustomMenu}>
+                            <Dropdown.Button>
+                                <div className={styles.userProfile}><ImgAndName imgSrc={profilePic} name="Sarthak Kamra"/></div>
+                            </Dropdown.Button>
+                            <Dropdown.Menu>
                                 <Dropdown.Item onClick={()=> appActions.loggedIn(false)}>Logout</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>

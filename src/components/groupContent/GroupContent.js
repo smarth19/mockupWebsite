@@ -4,35 +4,53 @@ import ArticleCard from './ArticleCard'
 import styles from './groupContent.module.css'
 import {useAppContext} from '../../reducers/App/context'
 import ImgAndName from '../generic/ImgAndName/ImgAndName'
-import Dropdown from 'react-bootstrap/Dropdown'
-import {CustomToggle, CustomMenu} from '../generic/DropdownMenu'
+// import Dropdown from 'react-bootstrap/Dropdown'
+// import {CustomToggle, CustomMenu} from '../generic/DropdownMenu'
+import Dropdown from '../generic/dropdown/Dropdown'
+
+import img_sarthak from './img/user/sarthak.png'
+import img_sarah from './img/user/sarah.png'
+import img_ronal from './img/user/ronal.png'
+import img_joseph from './img/user/joseph.png'
+
+import articleImg_article from './img/articles/article.png'
+import articleImg_education from './img/articles/education.png'
+import articleImg_meetup from './img/articles/meetup.png'
+
+import grpImg_leisure from './img/group photos/leisure.png'
+import grpImg_activism from './img/group photos/activism.png'
+import grpImg_mba from './img/group photos/mba.png'
+import grpImg_philosophy from './img/group photos/philosophy.png'
 
 const articles = [
     {
         id: 1,
+        articleImg: articleImg_article,
         type: '✍️ Article',
         topic: 'What if famous brands had regular fonts? Meet RegulaBrands!',
         description: 'I’ve worked in UX for the better part of a decade. From now on, I plan to rei…',
-        userImg: 'https://source.unsplash.com/48x48/?john',
+        userImg: img_sarthak,
         userName: 'Sarthak Kamra',
         views: '1.4k',
     },
     {
         id: 2,
+        articleImg: articleImg_education,
         type: '🔬️ Education',
         topic: 'Tax Benefits for Investment under National Pension Scheme launched by Government',
         description: 'I’ve worked in UX for the better part of a decade. From now on, I plan to rei…',
-        userImg: 'https://source.unsplash.com/48x48/?sarah',
+        userImg: img_sarah,
         userName: 'Sarah West',
         views: '6.6k',
     },
     {
         id: 3,
+        articleImg: articleImg_meetup,
         type: '🗓️ Meetup',
         topic: 'Finance & Investment Elite Social Mixer @Lujiazui',
         date: "Fri, 12 Oct, 2018",
         location: "Ahmedabad, India",
-        userImg: 'https://source.unsplash.com/48x48/?melinda',
+        userImg: img_ronal,
         userName: 'Ronal Jones',
         website: "xyz",
         views: '600',
@@ -43,7 +61,7 @@ const articles = [
         topic: 'Software Developer',
         company: "Innovaccer Analytics Private Ltd.",
         location: "Noida, India",
-        userImg: 'https://source.unsplash.com/48x48/?joseph',
+        userImg: img_joseph,
         userName: 'Joseph Gray',
         views: '4.9k',
         applyOn: 'Timesjobs'
@@ -67,17 +85,17 @@ const GroupContent = () => {
                     <div>
                         <div className={`${styles.filterBtn} ${styles.actionBtns_btns}`}>   
                             <Dropdown>
-                                <Dropdown.Toggle as={CustomToggle}>
+                                <Dropdown.Button>
                                     <div style={{display:'flex'}}>
                                         <span>Filter: All</span>
                                         <span className="icon"><Icons icon="down_filled"/></span>
                                     </div>
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu align="start" as={CustomMenu}>
-                                    <Dropdown.Item eventKey="1">Article</Dropdown.Item>
-                                    <Dropdown.Item eventKey="2">Event</Dropdown.Item>
-                                    <Dropdown.Item eventKey="1">Education</Dropdown.Item>
-                                    <Dropdown.Item eventKey="1">Job</Dropdown.Item>
+                                </Dropdown.Button>
+                                <Dropdown.Menu style={{left: "-60px"}}>
+                                    <Dropdown.Item>Article</Dropdown.Item>
+                                    <Dropdown.Item>Event</Dropdown.Item>
+                                    <Dropdown.Item>Education</Dropdown.Item>
+                                    <Dropdown.Item>Job</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
@@ -123,11 +141,10 @@ const GroupContent = () => {
                         <div className={styles.recommendedDiv}>
                             <div className={styles.recommendedDiv_div1}><span><Icons icon="like"/></span><span>RECOMMENDED GROUPS</span></div>
                             <div>
-                                <Group imgSrc='https://source.unsplash.com/48x48/?tech' name="Technology" followed={false}/>
-                                <Group imgSrc='https://source.unsplash.com/48x48/?music' name="Music" followed={false}/>
-                                <Group imgSrc='https://source.unsplash.com/48x48/?startup' name="Start ups" followed={true}/>
-                                <Group imgSrc='https://source.unsplash.com/48x48/?sports' name="Sports" followed={false}/>
-                                <Group imgSrc='https://source.unsplash.com/48x48/?gym' name="Gym" followed={false}/>
+                                <Group imgSrc={grpImg_leisure} name="Leisure" followed={true}/>
+                                <Group imgSrc={grpImg_activism} name="Activism" followed={false}/>
+                                <Group imgSrc={grpImg_mba} name="MBA" followed={false}/>
+                                <Group imgSrc={grpImg_philosophy} name="Philosophy" followed={false}/>
                             </div>
                             <div className={styles.recommendedDiv_div3}><span>See More...</span></div>
                         </div>
